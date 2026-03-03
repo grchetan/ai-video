@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chetan Copy Hub</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 32px;
+        letter-spacing: 1px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 15px;
+        transition: 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #00ffd5;
+      }
+
+      .card p {
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.9;
+        white-space: pre-line;
+      }
+
+      .copy-btn {
+        margin-top: 15px;
+        padding: 8px 14px;
+        border: none;
+        border-radius: 8px;
+        background: #00ffd5;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .copy-btn:hover {
+        background: #00c3a5;
+      }
+
+      .copied {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        color: #00ffd5;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🔥Ai videos Discription 🔥</h1>
+
+    <div class="container">
+      <!-- ===================== TEXT BLOCK 1 ===================== -->
+      <div class="card">
+        <span class="copied">Copied!</span>
+        <h2>Monkey Discription</h2>
+        <p id="text1">
+          You are an expert AI visual storyteller and cinematic prompt engineer.
+          I will give you a story or script. Your task is to convert the script
+          into multiple SCENES and generate ONE IMAGE PROMPT for EACH SCENE.
+          STRICT RULES YOU MUST FOLLOW: 1. Break the story into logical scenes
+          so the full story is visually understandable without text or dialogue.
+          2. Generate ONE image prompt per scene only. 3. Maintain SAME
+          character appearance, clothing, and style across all scenes unless the
+          story demands change. 4. Focus on strong emotions, actions, and
+          storytelling in every scene. 5. Each image must feel continuous and
+          cinematic, like frames of a short film. 6. The monkey’s height must
+          always be small, approximately the size of a puppy, and this must be
+          clearly mentioned inside every image prompt. 7. Every scene must be
+          set in a fully Indian environment — Indian streets, houses, local
+          surroundings, Indian lighting, and authentic desi background must be
+          clearly described. 8. Image quality must be ultra-realistic and highly
+          cinematic — photorealistic details, natural lighting, realistic
+          shadows, high sharpness. IMAGE FORMAT RULES (MANDATORY): • Aspect
+          Ratio: 9:16 (vertical) • Resolution: 1080×1920 • Mobile full-screen
+          (YouTube Shorts / Instagram Reels) • Cinematic lighting •
+          Ultra-detailed • High quality • No text inside image unless clearly
+          mentioned STYLE: • Emotional, cinematic, ultra-realistic • Clear
+          Indian environment description • Clear camera angle (close-up, wide
+          shot, medium shot) • Clear mood (sad, happy, motivational, dramatic,
+          cute) OUTPUT FORMAT (STRICT): Scene 1: Image Prompt: ... Scene 2:
+          Image Prompt: ... Scene 3: Image Prompt: ... Do NOT add explanations.
+          Do NOT add extra text. Do NOT merge scenes. Do NOT change the story.
+          Only give clean, ready-to-use AI image prompts. Wait for my script.
+        </p>
+        <button class="copy-btn" onclick="copyText('text1', this)">Copy</button>
+      </div>
+
+
+    <script>
+      function copyText(id, btn) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text);
+
+        const copiedMsg = btn.parentElement.querySelector('.copied');
+        copiedMsg.style.display = 'block';
+
+        setTimeout(() => {
+          copiedMsg.style.display = 'none';
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>
